@@ -9,7 +9,7 @@ Eric Vargas Carvajal
 
 Willy Tapia Ore
 
-# INIT REPOSITORY
+# INIT repository
 
 **$ git init**
 
@@ -23,7 +23,7 @@ Link error SSH :
 
 **$ git add .**
 
-**$ git status **
+**$ git status**
 
 **$ git commit -m "add commit..."**
 
@@ -37,7 +37,7 @@ Link error SSH :
 
 **$ git commit -m "delete commit..."**
 
- **$ git push origin master**
+**$ git push origin master**
 
 
 
