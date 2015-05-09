@@ -1,5 +1,5 @@
-# NFControl
-Proyecto Tecnologias Moviles
+# NFControl - Proyecto Tecnologias Moviles
+
 
 Hecho por :
 
