@@ -15,7 +15,7 @@ Willy Tapia Ore
 
 **$ git remote add origin git@github.com:Cristhianrg/NFControl.git**
 
-Link error SSH :
+Link error SSH : https://help.github.com/articles/generating-ssh-keys/
 
 **$ git pull**
 
