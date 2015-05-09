@@ -4,4 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="main_text_lblmensaje">Nesecitas Conectarte a un dispositivo</string>
+    <string name="main_btnsearch_text">Buscar dispositivos</string>
+    <string name="main_lblselecciona_text">Seleciona un dispositivo :</string>
 </resources>

@@ -8,31 +8,33 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/lbl_mensaje"
         android:layout_marginTop="40dp"
-        android:text="Nesecitas Conectarte a un dispositivo"
+        android:text="@string/main_text_lblmensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="@dimen/main_lblmensaje_textsize"
         android:textColor="#585858"
         android:layout_gravity="center_horizontal"/>
     <Button
-
+        android:id="@+id/btn_search"
         android:layout_marginTop="40dp"
-        android:text="Buscar dispositivos"
+        android:text="@string/main_btnsearch_text"
         android:background="#1565C0"
         android:textColor="#FFFFFF"
-        android:textSize="18dp"
+        android:textSize="@dimen/main_btnsearch_textsize"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         />
 
     <TextView
+        android:id="@+id/lbl_selecciona"
         android:layout_marginTop="40dp"
-        android:text="Seleciona un dispositivo : "
+        android:text="@string/main_lblselecciona_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="@dimen/main_lblseleciona_textsize"
         android:textColor="#585858"
         android:layout_gravity="center_horizontal"/>
     <ListView
