@@ -10,5 +10,8 @@ Eric Vargas Carvajal
 Willy Tapia Ore
 
 
-https://github.com/Cristhianrg/NFControl.git
+git init
+git remote add origin git@github.com:Cristhianrg/NFControl.git
+
+
 
