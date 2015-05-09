@@ -9,35 +9,36 @@ Eric Vargas Carvajal
 
 Willy Tapia Ore
 
+# INIT REPOSITORY
 
-** $ git init **
+**$ git init**
 
-** $ git remote add origin git@github.com:Cristhianrg/NFControl.git **
+**$ git remote add origin git@github.com:Cristhianrg/NFControl.git**
 
 Link error SSH :
 
-** $ git pull **
+**$ git pull**
 
 # ADD files
 
-** $ git add . **
+**$ git add .**
 
-** $ git status **
+**$ git status **
 
-** $ git commit -m "add commit..." **
+**$ git commit -m "add commit..."**
 
-** $ git push origin master **
+**$ git push origin master**
 
 # REMOVE files
 
-** $ git rm filename.txt **
+**$ git rm filename.txt**
 
-** $ git status **
+**$ git status**
 
-** $ git commit -m "delete commit..." **
+**$ git commit -m "delete commit..."**
 
-** $ git push origin master **
- **This will be Bold**
+ **$ git push origin master**
+
 
 
 
