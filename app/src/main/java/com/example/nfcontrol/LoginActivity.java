@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends RootActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
