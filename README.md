@@ -5,7 +5,7 @@ Hecho por :
 
 Cristhian Rojas Gomez
 
-Eric Vargas Carvajal
+Eric Vargas Carbajal
 
 Willy Tapia Ore
 
