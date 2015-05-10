@@ -1,10 +1,12 @@
 package com.example.nfcontrol;
 
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -19,6 +21,7 @@ public class MainActivity extends RootActivity {
     private Button btnGetPairedDevices;
     private ListView lvPairedDevices;
 
+    private ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +52,32 @@ public class MainActivity extends RootActivity {
                 lvPairedDevices.setAdapter(adapter);
             }
         });
+        // Nos conectamos con el dispositivo que elijamos del listView
 
+        lvPairedDevices.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
+                pd = new ProgressDialog(MainActivity.this);
+                pd.setMessage(getString(R.string.connecting));
+                pd.setCancelable(false);
+                pd.show();
 
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        BluetoothDroid.getInstance(MainActivity.this).connectDevice(position);
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                lvPairedDevices.setAdapter(null);
+                                pd.dismiss();
+                            }
+                        });
+                    }
+                }).start();
+            }
+        });
     }
 
 
