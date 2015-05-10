@@ -3,14 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".LoginActivity">
 
 
+    <item android:id="@+id/action_about"
 
-    <item android:id="@+id/action_myacount"
+        android:title="About"
+        android:showAsAction="never">
+    </item>
+
+    <item android:id="@+id/action_settings"
 
         android:title="Configuracion"
         android:showAsAction="never">
     </item>
 
-    <item android:id="@+id/action_logout"
+    <item android:id="@+id/action_exit"
 
         android:title="Salir"
         android:showAsAction="never">
