@@ -1,6 +1,7 @@
 package com.example.nfcontrol;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,8 +38,22 @@ public class MainActivity extends RootActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id)
+        {
+
+            case R.id.action_about:
+                Intent i =  new Intent(MainActivity.this,AboutActivity.class);
+                startActivity(i);
+                break;
+            case R.id.action_settings:
+                /*Intent i =  new Intent(MainActivity.this,MainActivity.class);
+                startActivity(i);*/
+                break;
+            case R.id.action_exit:
+                //System.exit(0);
+                break;
+            default:
+                break;
         }
 
         return super.onOptionsItemSelected(item);
