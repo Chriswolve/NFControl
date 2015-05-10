@@ -3,6 +3,7 @@ package com.example.nfcontrol.Clases;
 /**
  * Created by Cristhian on 5/10/15.
  */
+
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -18,7 +19,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-public class BluetoothDroid {
+public class BluetoothDroid  {
 
     // singleton
     private static BluetoothDroid instance;
@@ -26,18 +27,33 @@ public class BluetoothDroid {
     // variables
     private static final UUID MY_UUID = UUID
             .fromString("00001101-0000-1000-8000-00805F9B34FB");
-    private BluetoothAdapter mBluetoothAdapter;
+    private static BluetoothAdapter mBluetoothAdapter;
 
     public static final String TAG = "BluettothDroid";
 
     // variables for BT devices
-    private List<BluetoothDevice> device = new ArrayList<BluetoothDevice>();
+    private static List<BluetoothDevice> device = new ArrayList<BluetoothDevice>();
 
-    private Boolean isBTConected = false;
+    private static Boolean isBTConected = false;
 
-    private BluetoothSocket mSocket;
-    private OutputStream mOutStream;
-    private InputStream mInStream;
+    private static BluetoothSocket mSocket;
+    private static OutputStream mOutStream;
+    private static InputStream mInStream;
+    public static void Disconect (){
+        instance = null;
+        device = new ArrayList<BluetoothDevice>();
+        isBTConected = false;
+        mBluetoothAdapter = null;
+        mSocket = null;
+        mOutStream =null;
+        mInStream = null;
+    }
+
+    public static void ClearDevices (){
+
+        device = new ArrayList<BluetoothDevice>();
+
+    }
 
     private BluetoothDroid(Context context) {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -61,7 +77,7 @@ public class BluetoothDroid {
         return instance;
     }
 
-    private void LoadBT() {
+    public static void LoadBT() {
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter
                 .getBondedDevices();
 

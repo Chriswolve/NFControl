@@ -1,6 +1,5 @@
 package com.example.nfcontrol;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +13,10 @@ public class LoginActivity extends RootActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //setTitle("NFControl");
+        //getActionBar().setIcon(R.drawable.logo);
+
 
     }
 

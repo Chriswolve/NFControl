@@ -2,7 +2,9 @@ package com.example.nfcontrol;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,6 +45,9 @@ public class MainActivity extends RootActivity {
             @Override
             public void onClick(View v) {
 
+                lvPairedDevices.setAdapter(null);
+                BluetoothDroid.Disconect();
+
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                         MainActivity.this,
                         android.R.layout.simple_list_item_1,
@@ -57,25 +62,19 @@ public class MainActivity extends RootActivity {
         lvPairedDevices.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
-                pd = new ProgressDialog(MainActivity.this);
-                pd.setMessage(getString(R.string.connecting));
-                pd.setCancelable(false);
-                pd.show();
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        BluetoothDroid.getInstance(MainActivity.this).connectDevice(position);
+                final String device_name = lvPairedDevices.getItemAtPosition(position).toString();
+                lvPairedDevices.setAdapter(null);
 
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                lvPairedDevices.setAdapter(null);
-                                pd.dismiss();
-                            }
-                        });
-                    }
-                }).start();
+                Intent i =  new Intent(MainActivity.this,DeviceActivity.class);
+                Bundle bundle = new Bundle();
+
+                bundle.putString("NOMBRE", device_name);
+                Log.d("POSITION", position+" ");
+
+                i.putExtra("DEVICE", position);
+                i.putExtras(bundle);
+                startActivity(i);
             }
         });
     }
