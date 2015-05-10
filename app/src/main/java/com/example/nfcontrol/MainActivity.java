@@ -1,15 +1,23 @@
 package com.example.nfcontrol;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.nfcontrol.Clases.BluetoothDroid;
 
 
 public class MainActivity extends RootActivity {
 
-
+    private TextView tvTitle;
+    private Button btnGetPairedDevices;
+    private ListView lvPairedDevices;
 
 
     @Override
@@ -19,6 +27,29 @@ public class MainActivity extends RootActivity {
 
         setTitle("NFControl");
         getActionBar().setIcon(R.drawable.logo);
+
+
+        tvTitle = (TextView) findViewById(R.id.lbl_selecciona);
+        btnGetPairedDevices = (Button) findViewById(R.id.btn_search);
+        lvPairedDevices = (ListView) findViewById(R.id.lv_devices);
+
+        BluetoothDroid.getInstance(MainActivity.this);
+
+        // Obtenemos dispositivos apareados y los mostramos en un listview
+        btnGetPairedDevices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                        MainActivity.this,
+                        android.R.layout.simple_list_item_1,
+                        BluetoothDroid.getInstance(MainActivity.this).getNameBtDevices()
+                );
+
+                lvPairedDevices.setAdapter(adapter);
+            }
+        });
+
 
     }
 
@@ -42,8 +73,8 @@ public class MainActivity extends RootActivity {
         {
 
             case R.id.action_about:
-                Intent i =  new Intent(MainActivity.this,AboutActivity.class);
-                startActivity(i);
+               // Intent i =  new Intent(MainActivity.this,AboutActivity.class);
+               // startActivity(i);
                 break;
             case R.id.action_settings:
                 /*Intent i =  new Intent(MainActivity.this,MainActivity.class);

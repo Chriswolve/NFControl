@@ -6,7 +6,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="about_activity">AboutActivity</string>
     <string name="copyright">Copyright 2015,Todos los derechos reservados</string>
-    <string name="main_text_lblmensaje">Nesecitas Conectarte a un dispositivo</string>
-    <string name="main_btnsearch_text">Buscar dispositivos</string>
+    <string name="main_text_lblmensaje">Para conectarte a un dispositivo , necesitas aparearte a un dispositivo primero</string>
+    <string name="main_btnsearch_text">Dispositivos apareados</string>
     <string name="main_lblselecciona_text">Selecciona un dispositivo :</string>
 </resources>
