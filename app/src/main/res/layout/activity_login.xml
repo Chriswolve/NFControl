@@ -52,7 +52,7 @@
 
         <EditText
             android:textSize="16dp"
-            android:hint="Constraseña"
+            android:hint="Contaseña"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:layout_width="200dp"
