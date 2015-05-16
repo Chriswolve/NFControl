@@ -99,8 +99,8 @@ public class MainActivity extends RootActivity {
         {
 
             case R.id.action_about:
-               // Intent i =  new Intent(MainActivity.this,AboutActivity.class);
-               // startActivity(i);
+                Intent i =  new Intent(MainActivity.this,AboutActivity.class);
+                startActivity(i);
                 break;
             case R.id.action_settings:
                 /*Intent i =  new Intent(MainActivity.this,MainActivity.class);
